@@ -34,6 +34,11 @@
 - Update
 - Header
 
+### User Stories
+
+- As a user, I should be able to see a list of my data.
+- As a user, I want to click on one of the items of data and it will appear on the index page.
+
 ### Schema
 
 <img src="https://i.imgur.com/NJGzoq0.png" width="600px">
