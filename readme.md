@@ -23,6 +23,15 @@
 
 ### Routes
 
+```
+App --> Header 
+App --> Outlet 
+Outlet -- "/" --> Index
+Outlet -- "/trips/:id" --> Show
+Outlet -- "/trips/create" --> createAction
+Outlet -- "/trips/update/:id" --> updateAction
+Outlet -- "/trips/delete/:id" --> deleteAction
+```
 - App
 - Index
 - Update
