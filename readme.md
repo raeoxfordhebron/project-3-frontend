@@ -27,18 +27,20 @@
 - Index
 - Update
 - Delete
+- Show
 
 ### Components
 
-- Index 
-- Update
+- Index
+- Show
 - Header
 
 ### User Stories
 
-- As a user, I should be able to see a list of my data.
-- As a user, I want to click on one of the items of data and it will appear on the index page.
-- As a user, I want to be able to edit and delete items.
+- As a user, I want to be able to see a list of my destinations.
+- As a user, I want to click on one of the destinations and it will appear on the index page - which will be the show page at that point.
+- As a user, I want to be able to add, edit, and delete destinations.
+- As a user, I want to be able to check off destinations as I visit them.
 
 
 ### Schema
