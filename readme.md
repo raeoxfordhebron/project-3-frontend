@@ -36,10 +36,10 @@ Outlet -- "/places/delete/:id" --> deleteAction
 | Route | Element | Loader | Action | Summary |
 | ----- | ------- | ------ | ------ | ------- |
 | /     | Index   | indexLoader |   | Loads up list of places |         |
-| /trips/:id | Show | showLoader |  | Loads up an individual place | 
-| /trips/create | Create|        | createAction | Handles submission of create form for one place | 
-| /trips/update/:id | Update  |   | updateAction | Handles submission of update form for one place | 
-| /trips/delete/:id | Delete  |   | deleteAction | Handles submission of delete form for one place |  
+| /places/:id | Show | showLoader |  | Loads up an individual place | 
+| /places/create | Create|        | createAction | Handles submission of create form for one place | 
+| /places/update/:id | Update  |   | updateAction | Handles submission of update form for one place | 
+| /places/delete/:id | Delete  |   | deleteAction | Handles submission of delete form for one place |  
 
 ### User Stories
 
