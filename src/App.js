@@ -1,14 +1,14 @@
-import './App.css';
+import "./App.css"
 import Index from "./pages/Index"
-import Update from "./pages/Update"
+import Show from "./pages/Show"
 
 function App() {
   return (
     <div className="App">
-      <Index/>
-      <Update/>
+      <Index />
+      <Show />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
