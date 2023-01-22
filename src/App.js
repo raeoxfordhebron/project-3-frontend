@@ -1,14 +1,11 @@
-import './App.css';
-import Index from "./pages/Index"
-import Update from "./pages/Update"
+import { Outlet } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      <Index/>
-      <Update/>
+      <Outlet />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
