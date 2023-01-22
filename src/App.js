@@ -1,12 +1,9 @@
-import "./App.css"
-import Index from "./pages/Index"
-import Show from "./pages/Show"
+import { Outlet } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      <Index />
-      <Show />
+      <Outlet />
     </div>
   )
 }
