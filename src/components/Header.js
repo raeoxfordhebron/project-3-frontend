@@ -3,8 +3,12 @@
 export default function Header(){
     
     return(
-        <>
-            <h1>Header</h1>
-        </>
+        <div className="header">
+            <p className="cName">Road Trip Buddy</p>
+            <div className="nav">
+                <p>box1</p>
+                <p>box2</p>
+            </div>
+        </div>
     )
 }
