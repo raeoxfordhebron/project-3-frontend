@@ -1,5 +1,3 @@
-import { useParams } from "react-router-dom"
-
 const URL = "https://project-3-backend-cm7x.onrender.com"
 
 export const indexLoader = async () => {
