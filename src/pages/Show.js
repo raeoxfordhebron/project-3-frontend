@@ -12,12 +12,17 @@ export default function Show(props) {
       <p>{place.notes}</p>
 
       <Form action={`/update/${place._id}`} method="post">
-        <input type="input" name="place" placeholder="Place to visit" />
-        <input type="input" name="cityState" placeholder="City, State" />
-        <input type="input" name="address" placeholder="Address" />
-        <input type="input" name="url" placeholder="Website URL" />
-        <input type="input" name="image" placeholder="Image URL" />
-        <input type="input" name="notes" placeholder="Notes" />
+        <input type="input" name="place" placeholder="Place to visit" defaultValue={place.place} />
+        <input
+          type="input"
+          name="cityState"
+          placeholder="City, State"
+          defaultValue={place.cityState}
+        />
+        <input type="input" name="address" placeholder="Address" defaultValue={place.address} />
+        <input type="input" name="url" placeholder="Website URL" defaultValue={place.url} />
+        <input type="input" name="image" placeholder="Image URL" defaultValue={place.image} />
+        <input type="input" name="notes" placeholder="Notes" defaultValue={place.notes} />
         <button>Update {place.place}</button>
       </Form>
 
