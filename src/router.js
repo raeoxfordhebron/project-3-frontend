@@ -2,12 +2,13 @@ import { createBrowserRouter, createRoutesFromElements, Route } from "react-rout
 import App from "./App"
 import Index from "./pages/Index"
 import Show from "./pages/Show"
+import { indexLoader, showLoader } from "./loaders"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="" element={<Index />} />
-      <Route path=":id" element={<Show />} />
+      <Route path="" element={<Index />} loader={indexLoader}/>
+      <Route path=":id" element={<Show />} loader={showLoader}/>
       <Route path="create" />
       <Route path="update/:id" />
       <Route path="delete/:id" />
