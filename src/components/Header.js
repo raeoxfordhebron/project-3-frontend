@@ -1,14 +1,24 @@
+import { useState } from "react"
 
 
 export default function Header(){
-    
+
+    const [navbarOpen, setNavbarOpen] = useState(false)
+
+    const handleToggle = () => {
+        setNavbarOpen(!navbarOpen)
+    }
+
     return(
         <div className="header">
             <p className="cName">Road Trip Buddy</p>
-            <div className="nav">
+            <div className="navBar">
                 <p>box1</p>
-                <p>box2</p>
-            </div>
+                <button onClick={handleToggle}>{navbarOpen ? "X" : "="}</button>
+                <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                    
+                </ul>
+                </div>
         </div>
     )
 }
