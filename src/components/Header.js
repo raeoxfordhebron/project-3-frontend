@@ -15,8 +15,10 @@ export default function Header(){
             <div className="navBar">
                 <p>box1</p>
                 <button onClick={handleToggle}>{navbarOpen ? "X" : "="}</button>
-                <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>...</ul>
-            </div>
+                <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                    
+                </ul>
+                </div>
         </div>
     )
 }
