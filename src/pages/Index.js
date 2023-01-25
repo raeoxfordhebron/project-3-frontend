@@ -1,4 +1,6 @@
 import { Form, Link, useLoaderData } from "react-router-dom"
+import Pen from "../components/img/pen.png"
+import Trashcan from "../components/img/trashcan.png"
 
 function Index(props) {
   const places = useLoaderData()
@@ -12,16 +14,16 @@ function Index(props) {
             <Link to={`/${place._id}`}>
               <h1>{place.place}</h1>
             </Link>
-            <div className="icons">
-              {/* <Link to={`/${place._id}`}>
+            {/* <div className="icons">
+              <Link to={`/${place._id}`}>
                 <img className="pen" src={Pen} alt="pen" />
               </Link>
               <Form action={`/delete/${place._id}`} method="post">
                 <button className={"trashCan"}>
                   <img className="trashcan" src={Trashcan} alt="trashcan" />
                 </button>
-              </Form> */}
-            </div>
+              </Form>
+            </div> */}
           </div>
         ))}
       </div>
