@@ -9,7 +9,7 @@ export default function Show(props) {
       </a>
       <h3>{place.cityState}</h3>
       <h4>{place.address}</h4>
-      <p>{place.notes}</p>
+      <p>Notes: {place.notes}</p>
 
       <Form action={`/update/${place._id}`} method="post">
         <input type="input" name="place" placeholder="Place to visit" defaultValue={place.place} />
