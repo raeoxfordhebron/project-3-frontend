@@ -36,7 +36,7 @@ body {
     position: relative;
     height: 100vh;
     z-index: 2;
-    background-color: rgba($color: $black, $alpha: .6);
+    background-color: rgba($color: $black, $alpha: .7);
 }
 
 @mixin interFont {
@@ -78,7 +78,6 @@ body {
 
         p{
             padding: 5px;
-            color: $white;
         }
 
         button {
@@ -97,7 +96,7 @@ body {
             bottom: 0;
             height: 72vh;
             width: 0;
-            max-width: 290px;
+            max-width: 400px;
             z-index: 9;
             border-radius: 10px 0 0 10px;
 
@@ -110,9 +109,15 @@ body {
             @include box-shadow();
         }
 
+        & > p {
+            color: $white
+        }
+
         a {
-            display: block;
-            padding: 10px 40px;
+            @include interFont();
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 20px;
             text-decoration: none;
             color: $black;
             text-transform: uppercase;
@@ -143,3 +148,52 @@ body {
         display: flex;
     }
 }
+
+#place {
+    display: flex;
+    flex-direction: row;
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
+
+
+    .places-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        .trashCan {
+            background: url("../components/img/trashcan.png") no-repeat;
+            border: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin: 0 auto;
+            width: 16px;
+            height: 18px;
+        
+            &:hover {
+                background: url("../components/img/Trashcan-red.png") no-repeat;
+                position: relative;
+            }
+        }
+        
+        .pen {
+            background: url("../components/img/pen.png") no-repeat;
+            border: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin: 0 auto;
+            width: 18px;
+            height: 19px;
+            margin: 0 15px 0 0;
+        
+            &:hover {
+                background: url("../components/img/pen-green.png") no-repeat;
+            } 
+        }
+      
+    }    
+}
+

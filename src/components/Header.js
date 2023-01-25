@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, Form } from "react-router-dom"
+import Pen from "../components/img/pen.png"
+import Trashcan from "../components/img/trashcan.png"
 // import { indexLoader } from "../loaders"
 
 
@@ -24,8 +26,18 @@ export default function Header(){
                 return(
                 <li className="place" id="place">
                     <Link to={`/${place._id}`}>
-                    <h1>{place.place}</h1>
+                        <p>{place.place}</p>
                     </Link>
+                    <div className="places-buttons">
+                        <Link to={`/${place._id}`}>
+                            <img className="pen" src={Pen} alt="pen" />
+                        </Link>
+                        <Form action={`/delete/${place._id}`} method="post">
+                            <button className={"trashCan"}>
+                                <img className="trashcan" src={Trashcan}  alt="trashcan" />
+                            </button>
+                        </Form>
+                    </div>
                 </li>
                 )
             })
@@ -34,7 +46,7 @@ export default function Header(){
     }
 
     // useContext hook <- look into it
-    // a way to create global scope manager
+    // ^^^ a way to create global scope manager
     useEffect(() => {
         fetch("https://project-3-backend-cm7x.onrender.com/places")
           .then(res => res.json())
