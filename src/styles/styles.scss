@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Inter:wght@300;400;600&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+  
+* {
+padding: 0;
+margin: 0; 
+}
+
+img, picture, svg, video {
+display: block; 
+max-width: 100%;
+}
+
+body {
+min-height: 100vh;
+}
+
+/////////////////
+/// VARIABLES ///
+/////////////////
+
+// COLORS
+$white: #FFF;
+$black: #333;
+
+@mixin interFont {
+    font-family: "Inter", sans-serif;
+}
+
+@mixin FellDouble {
+    font-family: 'IM Fell Double Pica', serif;
+}
+
+.header {
+    background-color: rgba($color: #131313, $alpha: .8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cName {
+        @include FellDouble();
+        font-size: 2rem;
+        color: $white;
+        padding: 10px;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+
+        p{
+            padding: 5px;
+        }
+    }
+}
+
+
+.footerContainer {
+    background-color: $black;
+    display: flex;
+    flex-direction: row;
+    padding: .5rem;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    
+    .teamContainer{
+        padding: 15px;
+    }
+
+    .social {
+        display: flex;
+    }
+}
+

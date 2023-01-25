@@ -1,14 +1,15 @@
-import './App.css';
-import Index from "./pages/Index"
-import Update from "./pages/Update"
+import { Outlet } from "react-router-dom"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 function App() {
   return (
     <div className="App">
-      <Index/>
-      <Update/>
+      <Header />
+      <Outlet />
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
