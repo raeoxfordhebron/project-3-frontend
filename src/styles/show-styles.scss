@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Inter:wght@200;300;400;600&display=swap');
+
+$white: #FFF;
+$black: #333;
+
+@mixin interFont {
+    font-family: "Inter", sans-serif;
+}
+
+@mixin FellDouble {
+    font-family: 'IM Fell Double Pica', serif;
+}
+
+.index_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include interFont();
+    color: $white;
+    height: calc(100% - 16%);
+
+    background-color: rgba($color: $black, $alpha: .7);
+    
+    .place-image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;
+    }
+
+
+    .information {
+        padding: 0 2rem;
+
+        a {
+            color: $white;
+            text-decoration: none;
+            
+            h1 {
+                font-size: 4rem;
+                font-weight: 800;
+            }
+        }
+    
+        h3 {
+            font-size: 3rem;
+            font-weight: 200;
+        }
+    }
+
+}
+

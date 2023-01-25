@@ -1,15 +1,19 @@
 import { useLoaderData, Form } from "react-router-dom"
+import "../styles/show-styles.scss"
 
 export default function Show(props) {
   const place = useLoaderData()
   return (
-    <section>
-      <a href={place.url} target="_blank" rel="noreferrer">
-        <h1>{place.place}</h1>
-      </a>
-      <h3>{place.cityState}</h3>
-      <h4>{place.address}</h4>
-      <p>Notes: {place.notes}</p>
+    <section className="index_header">
+      <img className="place-image" src={place.image} alt={place.place}/>
+      <div className="information">
+        <a href={place.url} target="_blank" rel="noreferrer">
+          <h1>{place.place}</h1>
+        </a>
+        <h3>{place.cityState}</h3>
+        <h4>{place.address}</h4>
+        <p>Notes: {place.notes}</p>
+      </div>
 
       <Form action={`/update/${place._id}`} method="post">
         <input type="input" name="place" placeholder="Place to visit" defaultValue={place.place} />
