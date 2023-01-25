@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Inter:wght@300;400;600&display=swap');
 
+/////////////////
+/// VARIABLES ///
+/////////////////
+
+// COLORS
+$white: #FFF;
+$black: #333;
+
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -15,18 +24,20 @@ img, picture, svg, video {
 }
 
 body {
+    position: relative;
     min-height: 100vh;
-    background-color: rgba($color: #131313, $alpha: .8);
+    
     background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperset.com%2Fw%2Ffull%2F5%2Ff%2Fa%2F66099.jpg&f=1&nofb=1&ipt=821d16f5ccd6478cf9e246d91a89d89d436cf26f24e3057dcf68f76a81f72df6&ipo=images");
+    z-index: 1;
+   
 }
 
-/////////////////
-/// VARIABLES ///
-/////////////////
-
-// COLORS
-$white: #FFF;
-$black: #333;
+.App {
+    position: relative;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba($color: $black, $alpha: .6);
+}
 
 @mixin interFont {
     font-family: "Inter", sans-serif;
@@ -34,6 +45,17 @@ $black: #333;
 
 @mixin FellDouble {
     font-family: 'IM Fell Double Pica', serif;
+}
+
+@mixin box-shadow {
+    box-shadow:
+        2.8px 2.8px 1.3px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 3.1px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 5.9px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 10.5px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 19.6px rgba(0, 0, 0, 0.05),
+        100px 100px 47px rgba(0, 0, 0, 0.07)
+    ;
 }
 
 .header {
@@ -69,28 +91,30 @@ $black: #333;
             overflow-y: scroll;
             list-style: none;
             position: fixed;
-            top: 61px;
+            top: 80px;
             background: $white;
             right: 0;
             bottom: 0;
-            height: 100vh;
+            height: 72vh;
             width: 0;
-            overflow: hidden;
             max-width: 290px;
             z-index: 9;
+            border-radius: 10px 0 0 10px;
 
             transition: 1s ease-in-out;
+            
         }
         
         .showMenu {
             width: 100%;
+            @include box-shadow();
         }
 
         a {
             display: block;
             padding: 10px 40px;
             text-decoration: none;
-            color: #3fffd2;
+            color: $black;
             text-transform: uppercase;
             font-weight: bold;
         }

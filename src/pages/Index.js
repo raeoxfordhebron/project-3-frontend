@@ -7,8 +7,8 @@ function Index(props) {
     <div>
       <div className="container">
         <h1>Places to Visit</h1>
-        {places.map((place) => (
-          <div className="place" id="place">
+        {places.map((place, idx) => (
+          <div className="place" id="place" key={idx}>
             <Link to={`/${place._id}`}>
               <h1>{place.place}</h1>
             </Link>
