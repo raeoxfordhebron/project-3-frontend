@@ -4,8 +4,12 @@ import Pen from "../components/img/pen.png"
 // import Trashcan from "../components/img/trashcan.png"
 // import { indexLoader } from "../loaders"
 
+export default function Header() {
+  const [navbarOpen, setNavbarOpen] = useState(false)
 
-export default function Header(){
+  const handleToggle = () => {
+    setNavbarOpen(!navbarOpen)
+  }
 
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
