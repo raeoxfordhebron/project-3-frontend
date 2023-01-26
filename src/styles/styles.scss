@@ -45,7 +45,18 @@ $black: #333;
         font-size: 2rem;
         color: $white;
         padding: 10px;
+        display: flex;
     }
+
+    .trailer {
+        margin: 10px;
+        max-block-size: 35px;
+    
+    }
+
+    .trailer:hover {
+        transform: scaleX(-1);
+      }
 
     .nav {
         display: flex;
