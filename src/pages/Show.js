@@ -15,24 +15,26 @@ export default function Show(props) {
         <p>Notes: {place.notes}</p>
       </div>
 
+    <div className="form-changes">
       <Form action={`/update/${place._id}`} method="post">
-        <input type="input" name="place" placeholder="Place to visit" defaultValue={place.place} />
-        <input
-          type="input"
-          name="cityState"
-          placeholder="City, State"
-          defaultValue={place.cityState}
-        />
-        <input type="input" name="address" placeholder="Address" defaultValue={place.address} />
-        <input type="input" name="url" placeholder="Website URL" defaultValue={place.url} />
-        <input type="input" name="image" placeholder="Image URL" defaultValue={place.image} />
-        <input type="input" name="notes" placeholder="Notes" defaultValue={place.notes} />
-        <button>Update {place.place}</button>
-      </Form>
+          <input type="input" name="place" placeholder="Place to visit" defaultValue={place.place} />
+          <input
+            type="input"
+            name="cityState"
+            placeholder="City, State"
+            defaultValue={place.cityState}
+          />
+          <input type="input" name="address" placeholder="Address" defaultValue={place.address} />
+          <input type="input" name="url" placeholder="Website URL" defaultValue={place.url} />
+          <input type="input" name="image" placeholder="Image URL" defaultValue={place.image} />
+          <input type="input" name="notes" placeholder="Notes" defaultValue={place.notes} />
+          <button>Update {place.place}</button>
+        </Form>
 
-      <Form action={`/delete/${place._id}`} method="post">
-        <button>Delete {place.place}</button>
-      </Form>
+        <Form action={`/delete/${place._id}`} method="post">
+          <button>Delete {place.place}</button>
+        </Form>
+    </div>
     </section>
   )
 }

@@ -11,6 +11,10 @@ $black: #333;
     font-family: 'IM Fell Double Pica', serif;
 }
 
+@mixin FontWeightLight {
+    font-weight: 200;
+}
+
 .index_header {
     display: flex;
     flex-direction: column;
@@ -30,24 +34,44 @@ $black: #333;
     }
 
 
-    .information {
-        padding: 0 2rem;
+    .information 
+    {
+        margin: 0 2rem;
 
         a {
             color: $white;
             text-decoration: none;
             
             h1 {
-                font-size: 4rem;
+                font-size: 5rem;
                 font-weight: 800;
             }
         }
     
         h3 {
+            @include FontWeightLight;
             font-size: 3rem;
-            font-weight: 200;
+        }
+
+        h4 {
+            @include FontWeightLight;
+            font-size: 1.4rem;
+            padding: 0 0 20px 0;
         }
     }
+}
 
+.form-changes {
+    margin: 2rem;
+
+    form {
+        display: flex;
+
+        input {
+            padding: 3px;
+            border-radius: 50px;
+            border: none;
+        }
+    }
 }
 

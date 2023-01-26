@@ -27,7 +27,7 @@ body {
     position: relative;
     min-height: 100vh;
     
-    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperset.com%2Fw%2Ffull%2F5%2Ff%2Fa%2F66099.jpg&f=1&nofb=1&ipt=821d16f5ccd6478cf9e246d91a89d89d436cf26f24e3057dcf68f76a81f72df6&ipo=images");
+    background-color: #131313;
     z-index: 1;
    
 }
@@ -68,7 +68,7 @@ body {
         @include FellDouble();
         font-size: 2rem;
         color: $white;
-        padding: 10px;
+        margin: 10px;
     }
 
     .navBar {
