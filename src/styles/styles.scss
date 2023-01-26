@@ -1,23 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Inter:wght@300;400;600&display=swap');
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-  
-* {
-padding: 0;
-margin: 0; 
-}
-
-img, picture, svg, video {
-display: block; 
-max-width: 100%;
-}
-
-body {
-min-height: 100vh;
-}
-
 /////////////////
 /// VARIABLES ///
 /////////////////
@@ -26,12 +8,54 @@ min-height: 100vh;
 $white: #FFF;
 $black: #333;
 
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+  
+* {
+    padding: 0;
+    margin: 0; 
+}
+
+img, picture, svg, video {
+    display: block; 
+    max-width: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperset.com%2Fw%2Ffull%2F5%2Ff%2Fa%2F66099.jpg&f=1&nofb=1&ipt=821d16f5ccd6478cf9e246d91a89d89d436cf26f24e3057dcf68f76a81f72df6&ipo=images");
+    z-index: 1;
+   
+}
+
+.App {
+    position: relative;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba($color: $black, $alpha: .7);
+}
+
 @mixin interFont {
     font-family: "Inter", sans-serif;
 }
 
 @mixin FellDouble {
     font-family: 'IM Fell Double Pica', serif;
+}
+
+@mixin box-shadow {
+    box-shadow:
+        2.8px 2.8px 1.3px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 3.1px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 5.9px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 10.5px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 19.6px rgba(0, 0, 0, 0.05),
+        100px 100px 47px rgba(0, 0, 0, 0.07)
+    ;
 }
 
 .header {
@@ -47,13 +71,61 @@ $black: #333;
         padding: 10px;
     }
 
-    .nav {
+    .navBar {
         display: flex;
         flex-direction: row;
         padding: 10px;
 
         p{
             padding: 5px;
+        }
+
+        button {
+            z-index: 10;
+            cursor: pointer;
+            width: 30px;
+        }
+
+        .menuNav {
+            overflow-y: scroll;
+            list-style: none;
+            position: fixed;
+            top: 80px;
+            background: $white;
+            right: 0;
+            bottom: 0;
+            height: 72vh;
+            width: 0;
+            max-width: 400px;
+            z-index: 9;
+            border-radius: 10px 0 0 10px;
+
+            transition: 1s ease-in-out;
+            
+        }
+        
+        .showMenu {
+            width: 100%;
+            @include box-shadow();
+        }
+
+        & > p {
+            color: $white
+        }
+
+        a {
+            @include interFont();
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 20px;
+            text-decoration: none;
+            color: $black;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        li:first-child {
+            margin-top: 7rem;
         }
     }
 }
@@ -63,18 +135,65 @@ $black: #333;
     background-color: $black;
     display: flex;
     flex-direction: row;
-    padding: .5rem;
     justify-content: center;
     position: absolute;
     width: 100%;
     bottom: 0;
     
     .teamContainer{
-        padding: 15px;
+        padding: 10px 30px;
     }
 
     .social {
         display: flex;
     }
+}
+
+#place {
+    display: flex;
+    flex-direction: row;
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
+
+
+    .places-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        .trashCan {
+            background: url("../components/img/trashcan.png") no-repeat;
+            border: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin: 0 auto;
+            width: 16px;
+            height: 18px;
+        
+            &:hover {
+                background: url("../components/img/Trashcan-red.png") no-repeat;
+                position: relative;
+            }
+        }
+        
+        .pen {
+            background: url("../components/img/pen.png") no-repeat;
+            border: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin: 0 auto;
+            width: 18px;
+            height: 19px;
+            margin: 0 15px 0 0;
+        
+            &:hover {
+                background: url("../components/img/pen-green.png") no-repeat;
+            } 
+        }
+      
+    }    
 }
 
