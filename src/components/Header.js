@@ -1,4 +1,3 @@
-import { useState } from "react"
 
 
 export default function Header(){
@@ -12,7 +11,7 @@ export default function Header(){
     return(
         <div className="header">
             <p className="cName">Road Trip Buddy</p>
-            <div className="navBar">
+            <div className="nav">
                 <p>box1</p>
                 <button onClick={handleToggle}>{navbarOpen ? "X" : "="}</button>
                 <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
@@ -22,3 +21,6 @@ export default function Header(){
         </div>
     )
 }
+
+
+
