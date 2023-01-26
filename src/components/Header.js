@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, createContext } from "react"
 import { Link, Form } from "react-router-dom"
 import Pen from "../components/img/pen.png"
 import Trashcan from "../components/img/trashcan.png"
@@ -33,9 +33,7 @@ export default function Header(){
                             <img className="pen" src={Pen} alt="pen" />
                         </Link>
                         <Form action={`/delete/${place._id}`} method="post">
-                            <button className={"trashCan"}>
-                                <img className="trashcan" src={Trashcan}  alt="trashcan" />
-                            </button>
+                            <button className={"trashCan"}></button>
                         </Form>
                     </div>
                 </li>

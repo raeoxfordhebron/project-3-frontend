@@ -170,6 +170,7 @@ body {
         display: flex;
         flex-direction: row;
         align-items: center;
+        aspect-ratio: 3/1;
     
         .trashCan {
             background: url("../components/img/trashcan.png") no-repeat;
