@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext } from "react"
 import { Link, Form } from "react-router-dom"
 import Pen from "../components/img/pen.png"
-import Trashcan from "../components/img/trashcan.png"
+// import Trashcan from "../components/img/trashcan.png"
 // import { indexLoader } from "../loaders"
 
 
@@ -9,17 +9,21 @@ export default function Header(){
 
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
-    const [navbarOpen, setNavbarOpen] = useState(false)
+    const [placebarOpen, setPlacebarOpen] = useState(false)
+    const [createbarOpen, setCreatebarOpen] = useState(false)
     const [places, setPlaces] = useState([])
 
-    const handleToggle = () => {
-        setNavbarOpen(!navbarOpen)
+    const handlePlaceListToggle = () => {
+        setPlacebarOpen(!placebarOpen)
+    }
+
+    const handleCreateToggle = () => {
+        setCreatebarOpen(!createbarOpen)
     }
 
     console.log(setTimeout(places, 5000), "<--- time out")
 
-    const SliderContent = (props) => {
-        
+    const SliderContent = (props) => {  
         if (places) {
             console.log(places, "<-- places in sliderContent") //
             return places.map((place) => {
@@ -40,7 +44,6 @@ export default function Header(){
                 )
             })
         }
-        
     }
 
     // useContext hook <- look into it
@@ -69,12 +72,33 @@ export default function Header(){
         <div className="header">
             <p className="cName">Road Trip Buddy</p>
             <div className="navBar">
-                <p>Box 1</p>
-                <button onClick={handleToggle}>{navbarOpen ? "X" : "="}</button>
-                <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>    
-                    {/* <Link>Test</Link> */}
+
+                {/* ---------- Create Toggle -----------  */}
+                <button onClick={handleCreateToggle}>
+                    {createbarOpen ? "X" : "+"}
+                </button>
+                
+                <ul className={`createNav ${createbarOpen ? " showCreateMenu" : ""}`}>
+                    <Form className="create-lace" action="/create" method="post">
+                        <input type="input" name="place" placeholder="Place to visit" />
+                        <input type="input" name="cityState" placeholder="City, State" />
+                        <input type="input" name="address" placeholder="Address" />
+                        <input type="input" name="url" placeholder="Website URL" />
+                        <input type="input" name="image" placeholder="Image URL" />
+                        <input type="input" name="notes" placeholder="Notes" />
+                        <input type="submit" value="Add a Place to List" />
+                    </Form>
+                </ul>
+
+                {/* ---------- Place Toggle -----------  */}
+                <button onClick={handlePlaceListToggle}>
+                    {placebarOpen ? "X" : "="}
+                </button>
+
+                <ul className={`menuNav ${placebarOpen ? " showMenu" : ""}`}>
                     {places ?  <SliderContent /> : <li>Loading...</li>}
                 </ul>
+
             </div>
         </div>
     )
