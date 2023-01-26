@@ -69,9 +69,10 @@ body {
         font-size: 2rem;
         color: $white;
         padding: 10px;
+        display: flex;
     }
 
-    .navBar {
+    .nav {
         display: flex;
         flex-direction: row;
         padding: 10px;
