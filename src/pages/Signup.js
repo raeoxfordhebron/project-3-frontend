@@ -1,14 +1,42 @@
 import React from "react"
-import {useState} from "react"
+import { useState } from "react"
+import { GlobalCtx } from "../App"
 
-const {form, setForm} = useState({
-    username: "",
-    password: ""
-})
+
 
 const Signup = (props) => {
+
+    const {gState, setGState} = React.useContext(GlobalCtx)
+    const {url} = gState
+
+    const blank = {
+        username: "",
+        password: ""
+    }
+
+    const {form, setForm} = useState(blank)
+
 const handleChange = (event) => {
+
     setForm({...form, [event.target.name]: event.target.value})
+}
+
+const handleSubmit = (event) => {
+    event.preventDefault()
+    const {username, password} = form
+    fetch(`${url}/auth/signup`, {
+        method: "post",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({username, password})
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        setForm(blank)
+        props.history.push("/login")
+    })
 }
      return (
         <div>

@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route } from "react-rout
 import App from "./App"
 import Index from "./pages/Index"
 import Show from "./pages/Show"
+import Signup from "./pages/Signup"
 import { indexLoader, showLoader } from "./loaders"
 
 const router = createBrowserRouter(
@@ -12,6 +13,7 @@ const router = createBrowserRouter(
       <Route path="create" />
       <Route path="update/:id" />
       <Route path="delete/:id" />
+      <Route path="signup" element={<Signup />}/>
     </Route>
   )
 )
