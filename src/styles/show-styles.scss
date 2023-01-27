@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica&family=Inter:wght@200;300;400;600&display=swap');
+
+$white: #FFF;
+$black: #333;
+
+@mixin interFont {
+    font-family: "Inter", sans-serif;
+}
+
+@mixin FellDouble {
+    font-family: 'IM Fell Double Pica', serif;
+}
+
+@mixin FontWeightLight {
+    font-weight: 200;
+}
+
+.index_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include interFont();
+    color: $white;
+    height: 70%;
+    
+    .place-image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        filter: brightness(50%);
+        -webkit-filter: brightness(50%);
+    }
+
+
+    .information 
+    {
+        margin: 0 2rem;
+
+        a {
+            color: $white;
+            text-decoration: none;
+            
+            h1 {
+                font-size: 5vw;
+                font-weight: 800;
+            }
+        }
+    
+        h3 {
+            @include FontWeightLight;
+            font-size: 3vw;
+        }
+
+        h4 {
+            @include FontWeightLight;
+            font-size: 1.4vw;
+            padding: 0 0 20px 0;
+        }
+    }
+}
+
+.form-changes {
+    margin: 2rem;
+
+    form {
+        display: flex;
+        width: 60%;
+        flex-wrap: wrap;
+
+        input {
+            padding: 3px;
+            border-radius: 50px;
+            margin: 5px;
+            border: none;
+        }
+
+        button {
+            border-radius: 50px;
+            border: none;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #333;
+            color: $white;
+            cursor: pointer;
+        }
+        
+    }
+}
+
+
+
