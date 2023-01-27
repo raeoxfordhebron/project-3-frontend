@@ -14,7 +14,7 @@ export default function Show(props) {
         <h4>{place.address}</h4>
         <p>Notes: {place.notes}</p>
       </div>
-
+     
     <div className="form-changes">
       <Form action={`/update/${place._id}`} method="post">
           <input type="input" name="place" placeholder="Place to visit" defaultValue={place.place} />

@@ -1,6 +1,4 @@
 import { Form, Link, useLoaderData } from "react-router-dom"
-import Pen from "../components/img/pen.png"
-import Trashcan from "../components/img/trashcan.png"
 
 function Index(props) {
   const places = useLoaderData()

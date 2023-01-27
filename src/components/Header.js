@@ -1,15 +1,8 @@
-import { useState, useEffect, createContext } from "react"
+import { useState, useEffect } from "react"
 import { Link, Form } from "react-router-dom"
-import Pen from "../components/img/pen.png"
-// import Trashcan from "../components/img/trashcan.png"
 // import { indexLoader } from "../loaders"
 
 export default function Header() {
-  const [navbarOpen, setNavbarOpen] = useState(false)
-
-  const handleToggle = () => {
-    setNavbarOpen(!navbarOpen)
-  }
 
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -38,7 +31,7 @@ export default function Header() {
                     </Link>
                     <div className="places-buttons">
                         <Link to={`/${place._id}`}>
-                            <img className="pen" src={Pen} alt="pen" />
+                            <button className={"pen"}></button>
                         </Link>
                         <Form action={`/delete/${place._id}`} method="post">
                             <button className={"trashCan"}></button>
@@ -82,8 +75,8 @@ export default function Header() {
                     {createbarOpen ? "X" : "+"}
                 </button>
                 
-                <ul className={`createNav ${createbarOpen ? " showCreateMenu" : ""}`}>
-                    <Form className="create-lace" action="/create" method="post">
+                <ul className={`createNav ${createbarOpen ? "showCreateMenu" : ""}`}>
+                    <Form className="create-place" action="/create" method="post">
                         <input type="input" name="place" placeholder="Place to visit" />
                         <input type="input" name="cityState" placeholder="City, State" />
                         <input type="input" name="address" placeholder="Address" />
@@ -99,7 +92,7 @@ export default function Header() {
                     {placebarOpen ? "X" : "="}
                 </button>
 
-                <ul className={`menuNav ${placebarOpen ? " showMenu" : ""}`}>
+                <ul className={`menuNav ${placebarOpen ? "showMenu" : ""}`}>
                     {places ?  <SliderContent /> : <li>Loading...</li>}
                 </ul>
 
