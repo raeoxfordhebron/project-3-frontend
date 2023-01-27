@@ -12,6 +12,8 @@ export default function Header(){
 
                 <p>box1</p>
                 <p>box2</p>
+                {/* something like this = <Link to="/signup">Signup</Link>
+                    <Link to="/login">Login</Link */}
             </div>
         </div>
     )
