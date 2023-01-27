@@ -1,13 +1,12 @@
 import React from "react"
 import {useState} from "react"
 
-
-const Signup = (props) => {
-     const {form, setForm} = useState({
-        username: "",
-        password: ""
+const {form, setForm} = useState({
+    username: "",
+    password: ""
 })
 
+const Signup = (props) => {
 const handleChange = (event) => {
     setForm({...form, [event.target.name]: event.target.value})
 }
