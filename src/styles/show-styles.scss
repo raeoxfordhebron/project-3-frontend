@@ -21,16 +21,17 @@ $black: #333;
     justify-content: center;
     @include interFont();
     color: $white;
-    height: calc(100% - 16%);
-
-    background-color: rgba($color: $black, $alpha: .7);
+    height: 70%;
     
     .place-image {
         height: 100%;
         width: 100%;
         object-fit: cover;
         position: absolute;
+        top: 0;
         z-index: -1;
+        filter: brightness(50%);
+        -webkit-filter: brightness(50%);
     }
 
 
@@ -43,19 +44,19 @@ $black: #333;
             text-decoration: none;
             
             h1 {
-                font-size: 5rem;
+                font-size: 5vw;
                 font-weight: 800;
             }
         }
     
         h3 {
             @include FontWeightLight;
-            font-size: 3rem;
+            font-size: 3vw;
         }
 
         h4 {
             @include FontWeightLight;
-            font-size: 1.4rem;
+            font-size: 1.4vw;
             padding: 0 0 20px 0;
         }
     }
@@ -66,7 +67,7 @@ $black: #333;
 
     form {
         display: flex;
-        width: 40%;
+        width: 60%;
         flex-wrap: wrap;
 
         input {
