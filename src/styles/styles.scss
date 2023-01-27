@@ -68,8 +68,12 @@ body {
         @include FellDouble();
         font-size: 2rem;
         color: $white;
-        margin: 10px;
+<<<<<<<<< Temporary merge branch 1
+        padding: 10px;
         display: flex;
+=========
+        margin: 10px;
+>>>>>>>>> Temporary merge branch 2
     }
 
     .nav {

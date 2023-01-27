@@ -4,8 +4,12 @@ import Pen from "../components/img/pen.png"
 // import Trashcan from "../components/img/trashcan.png"
 // import { indexLoader } from "../loaders"
 
+export default function Header() {
+  const [navbarOpen, setNavbarOpen] = useState(false)
 
-export default function Header(){
+  const handleToggle = () => {
+    setNavbarOpen(!navbarOpen)
+  }
 
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -71,17 +75,43 @@ export default function Header(){
     return(
         <div className="header">
             <p className="cName">Road Trip Buddy</p>
-            <div className="navBar">
+<<<<<<<<< Temporary merge branch 1
+            <div className="nav">
                 <p>box1</p>
                 <button onClick={handleToggle}>{navbarOpen ? "X" : "="}</button>
                 <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
                     
+=========
+            <div className="navBar">
+
+                {/* ---------- Create Toggle -----------  */}
+                <button onClick={handleCreateToggle}>
+                    {createbarOpen ? "X" : "+"}
+                </button>
+                
+                <ul className={`createNav ${createbarOpen ? " showCreateMenu" : ""}`}>
+                    <Form className="create-lace" action="/create" method="post">
+                        <input type="input" name="place" placeholder="Place to visit" />
+                        <input type="input" name="cityState" placeholder="City, State" />
+                        <input type="input" name="address" placeholder="Address" />
+                        <input type="input" name="url" placeholder="Website URL" />
+                        <input type="input" name="image" placeholder="Image URL" />
+                        <input type="input" name="notes" placeholder="Notes" />
+                        <input type="submit" value="Add a Place to List" />
+                    </Form>
+>>>>>>>>> Temporary merge branch 2
+                </ul>
+
+                {/* ---------- Place Toggle -----------  */}
+                <button onClick={handlePlaceListToggle}>
+                    {placebarOpen ? "X" : "="}
+                </button>
+
+                <ul className={`menuNav ${placebarOpen ? " showMenu" : ""}`}>
+                    {places ?  <SliderContent /> : <li>Loading...</li>}
                 </ul>
 
             </div>
         </div>
     )
 }
-
-
-
