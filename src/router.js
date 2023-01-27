@@ -4,6 +4,7 @@ import Index from "./pages/Index"
 import Show from "./pages/Show"
 import { indexLoader, showLoader } from "./loaders"
 import { createAction, updateAction, deleteAction } from "./actions"
+import Signup from "./pages/Signup"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +14,8 @@ const router = createBrowserRouter(
       <Route path="create" action={createAction} />
       <Route path="update/:id" action={updateAction} />
       <Route path="delete/:id" action={deleteAction} />
+      <Route path="signup" element={<Signup/>}/>
+      <Route path="login"/>
     </Route>
   )
 )
