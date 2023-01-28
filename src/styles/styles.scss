@@ -26,10 +26,32 @@ img, picture, svg, video {
 body {
     position: relative;
     min-height: 100vh;
-    
-    background-color: #131313;
+    color: white;
     z-index: 1;
-   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.index-h1, .add {
+    padding: 20px;
+}
+
+#index-h1 {
+    font-size: 2rem;
+}
+
+.container h1 {
+    font-size: 1rem;
+}
+
+.index-background {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
 }
 
 .App {
@@ -37,7 +59,28 @@ body {
     height: 100vh;
     z-index: 2;
     background-color: rgba($color: $black, $alpha: .7);
+
+    input {
+        padding: 3px;
+        border-radius: 50px;
+        margin: 5px;
+        border: none;
+    }
+
+    input[type=submit]{
+        background-color: #2194FE;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #333;
+            color: $white;
+        }
+    }
 }
+
+
 
 @mixin interFont {
     font-family: "Inter", sans-serif;
@@ -66,7 +109,7 @@ body {
 
     .cName {
         @include FellDouble();
-        font-size: 2.5vw;
+        font-size: 2.2rem;
         color: $white;
         margin: 10px;
     }
@@ -104,7 +147,7 @@ body {
             overflow-y: scroll;
             list-style: none;
             position: fixed;
-            top: 80px;
+            top: 6rem;
             background: $white;
             right: 0;
             bottom: 0;
@@ -150,7 +193,7 @@ body {
             overflow-y: scroll;
             list-style: none;
             position: fixed;
-            top: 61px;
+            top: 6rem;
             background: $white;
             right: 0;
             bottom: 0;
@@ -226,7 +269,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 1vw;
+    font-size: 1rem;
     margin: 10px;
     padding: 2px;
     background-color: #D9D9D9;

@@ -1,4 +1,6 @@
 import { Form, Link, useLoaderData } from "react-router-dom"
+import Mountain from "../components/img/mountain-trees.jpg"
+
 
 function Index(props) {
   const places = useLoaderData()
@@ -6,7 +8,7 @@ function Index(props) {
   return (
     <div>
       <div className="container">
-        <h1>Places to Visit</h1>
+        <h1 className="index-h1" id="index-h1">Places to Visit</h1>
         {places.map((place, idx) => (
           <div className="place" id="place" key={idx}>
             <Link to={`/${place._id}`}>
@@ -24,6 +26,7 @@ function Index(props) {
             </div> */}
           </div>
         ))}
+        <img className="index-background" src={Mountain} alt="mountain with trees and fog"></img>
       </div>
 
       <div className="add">
