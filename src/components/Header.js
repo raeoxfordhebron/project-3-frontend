@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { Link, Form } from "react-router-dom"
-import PlaceMarker from "./img/place-marker.png"
 // import { indexLoader } from "../loaders"
 
 export default function Header() {
@@ -27,7 +26,6 @@ export default function Header() {
             return places.map((place) => {
                 return(
                 <li className="place" id="place">
-                    <img src={PlaceMarker} alt="place marker" className="placeMarker"></img>
                     <Link to={`/${place._id}`}>
                         <p>{place.place}</p>
                     </Link>
@@ -80,7 +78,7 @@ export default function Header() {
             <div className="navBar">
 
                 {/* ---------- Create Toggle -----------  */}
-                <button className="toggle-button" onClick={handleCreateToggle}>
+                <button onClick={handleCreateToggle}>
                     {createbarOpen ? "X" : "+"}
                 </button>
                 
@@ -98,7 +96,7 @@ export default function Header() {
                 </ul>
 
                 {/* ---------- Place Toggle -----------  */}
-                <button className="toggle-button" onClick={handlePlaceListToggle}>
+                <button onClick={handlePlaceListToggle}>
                     {placebarOpen ? "X" : "="}
                 </button>
 
