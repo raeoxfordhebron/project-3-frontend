@@ -8,7 +8,8 @@ export const GlobalCtx = React.createContext(null)
 
 
 function App() {
-  const [gState, setGState] = React.useState({url: "http://localhost:3000"})
+  const [gState, setGState] = React.useState({url: "https://project-3-backend-cm7x.onrender.com"})
+
   return (
     <GlobalCtx.Provider value={{gState, setGState}}>
     <div className="App">
