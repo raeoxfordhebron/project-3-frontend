@@ -4,16 +4,18 @@
 /// VARIABLES ///
 /////////////////
 
-// COLORS
+// VARIABLE COLORS
 $white: #FFF;
 $black: #333;
 
 
 *, *::before, *::after {
+    // instead of needing to do math everytime you add sizing, border-box, just includes the padding and border in an elemnet's total width and height
     box-sizing: border-box;
 }
   
 * {
+    // makes everything 0 so that way it makes it easier to add padding properly.
     padding: 0;
     margin: 0; 
 }
@@ -44,18 +46,32 @@ body {
 }
 
 .index-background {
+    // takes it out of inline and doesnt effect the rest of the document flow
     position: absolute;
+
+     // moves the image to the top
     top: 0;
+
+    // changes the z position to -1 so that way everything else is above it, making it an actual background image
     z-index: -1;
+
+    // makes the background image 100% so it's full page
     width: 100%;
     height: 100%;
+
+    // Changes the image to fill the page
     object-fit: cover;
+
+    // relativily new but it changes the image brightness to half of what it originally is
     filter: brightness(50%);
     -webkit-filter: brightness(50%);
 }
 
 .App {
+    // for z-index to work you need to have some type of positioning, so adding position relative doesnt change much but allows us to use z-index
     position: relative;
+
+    // vh is view height. so we are using 100% of the view height
     height: 100vh;
     z-index: 2;
     background-color: rgba($color: $black, $alpha: .7);
@@ -79,7 +95,6 @@ body {
         }
     }
 }
-
 
 
 @mixin interFont {
@@ -146,6 +161,8 @@ body {
         .menuNav {
             overflow-y: scroll;
             list-style: none;
+
+            // fixed keeps it in the position regardless of scrolling
             position: fixed;
             top: 6rem;
             background: $white;
@@ -153,10 +170,16 @@ body {
             bottom: 0;
             height: 72vh;
             width: 0;
+
+            // max width means it's the max the width something will get
             max-width: 400px;
+
+            // pushes the menu to the top z position allowing it to be in the most front
+            // the higher the z-index the more front something is
             z-index: 9;
             border-radius: 10px 0 0 10px;
 
+            // makes the slide out not instant and makes it smooth and nice looking
             transition: 1s ease-in-out;
             
         }
@@ -177,6 +200,8 @@ body {
             padding: 5px 10px;
             text-decoration: none;
             color: $black;
+
+            // transforms the text to all uppercase so we dont need to do it manually
             text-transform: uppercase;
             font-weight: bold;
         }

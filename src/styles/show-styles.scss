@@ -16,20 +16,38 @@ $black: #333;
 }
 
 .index_header {
+    // This makes the show page in a column
     display: flex;
     flex-direction: column;
+    
+    // puts stuff in the center vertically
     justify-content: center;
+
+    // includes the font family - Inter
     @include interFont();
+
+    // changes the font color to our white variable
     color: $white;
     height: 70%;
     
+    // This makes the place.image a background image and allows to be changed based on the ID
     .place-image {
         height: 100%;
         width: 100%;
+
+        // Changes the image to fill the page
         object-fit: cover;
+
+        // takes it out of inline and doesnt effect the rest of the document flow
         position: absolute;
+
+        // moves the image to the top
         top: 0;
+
+        // changes the z position to -1 so that way everything else is above it, making it an actual background image
         z-index: -1;
+
+        // relativily new but it changes the image brightness to half of what it originally is
         filter: brightness(50%);
         -webkit-filter: brightness(50%);
     }
