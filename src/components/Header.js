@@ -1,11 +1,9 @@
-
 import { useState, useEffect } from "react"
 import { Link, Form } from "react-router-dom"
 import PlaceMarker from "./img/place-marker.png"
 // import { indexLoader } from "../loaders"
 
 export default function Header() {
-
 
     // const [error, setError] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -72,7 +70,13 @@ export default function Header() {
     return(
         <div className="header">
             <p className="cName">Road Trip Buddy</p>
-
+<<<<<<<<< Temporary merge branch 1
+            <div className="nav">
+                <p>box1</p>
+                <button onClick={handleToggle}>{navbarOpen ? "X" : "="}</button>
+                <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                    
+=========
             <div className="navBar">
 
                 {/* ---------- Create Toggle -----------  */}
@@ -90,7 +94,7 @@ export default function Header() {
                         <input type="input" name="notes" placeholder="Notes" />
                         <input type="submit" value="Add a Place to List" />
                     </Form>
-
+>>>>>>>>> Temporary merge branch 2
                 </ul>
 
                 {/* ---------- Place Toggle -----------  */}
